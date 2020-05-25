@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"io"
 	"log"
 	"net/http"
@@ -23,5 +24,6 @@ func firstPage(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	http.HandleFunc("/", firstPage)
+	fmt.Println("开始监听5000端口............")
 	http.ListenAndServe(":5000", nil)
 }
